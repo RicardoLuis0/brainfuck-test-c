@@ -10,10 +10,10 @@ struct _tape{
     uint8_t data[TAPE_LENGTH];
 };
 
-typedef struct _tape_root{
+struct _tape_root{
     struct _tape * positive;
     struct _tape * negative;
-} tape_root;
+};
 
 static struct _tape * _make_tape(){
     struct _tape * temp=malloc(sizeof(struct _tape));

@@ -5,8 +5,7 @@
 #include "bool.h"
 #include "parser.h"
 #include "tape.h"
-
-#define STACK_SIZE 64
+#include "stack.h"
 
 int main(int argc,char ** argv){
     if(argc<2){
@@ -18,19 +17,16 @@ int main(int argc,char ** argv){
     if(!program){
         return 1;
     }
-    uint32_t * stack=calloc(STACK_SIZE,sizeof(uint32_t));
+    uint32_t_stack * stack=make_stack();
     if(!stack){
-        free(program);
-        printf("Failed to allocate memory for stack\n");
         return 1;
     }
     tape_root * tape=make_tape();
-    if(tape==NULL){
+    if(!tape){
         return 1;
     }
     uint32_t address=0;
     bool negative=false;
-    uint32_t sp=0;//stack pointer
     uint32_t pc=0;
     for(;pc<len;pc++){
         switch(program[pc]){
@@ -53,7 +49,7 @@ int main(int argc,char ** argv){
         }
     }
     free_tape(tape);
-    free(stack);
+    free_stack(stack);
     free(program);
     return 0;
 }

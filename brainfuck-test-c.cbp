@@ -11,6 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="test.txt" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -31,9 +32,22 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="main.c">
+		<Unit filename="bool.h" />
+		<Unit filename="brainfuck.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="parser.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="parser.h" />
+		<Unit filename="stack.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="stack.h" />
+		<Unit filename="tape.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="tape.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
