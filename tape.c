@@ -70,7 +70,7 @@ uint8_t * get_tape_data(tape_root * root,uint32_t address,bool negative){
             root->negative=_make_tape();
             if(!root->negative)return NULL;
         }
-        return _get_tape_data(root->negative,-address,1);
+        return _get_tape_data(root->negative,address,0);
     }else{
         if(!root->positive){
             root->positive=_make_tape();
