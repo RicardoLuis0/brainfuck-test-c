@@ -1,5 +1,6 @@
 #include "parser.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 static struct{char c;uint8_t op;} pt[OP_COUNT]={
     {'>',OPERATOR_MVRIGHT},
