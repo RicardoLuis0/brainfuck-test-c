@@ -31,7 +31,7 @@ bool pop(uint32_t_stack * st){
 }
 
 bool push(uint32_t_stack * st,uint32_t val){
-    if(st<STACK_SIZE){
+    if(st->sp<STACK_SIZE){
         st->data[st->sp++]=val;
         return true;
     }
